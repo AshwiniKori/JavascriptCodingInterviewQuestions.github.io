@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //interview questions on string
+        //how to check whether string containes substring
+        // //using includes()-ES6 method
+        // var mainString = "Hello";
+        // var subString = "Hell";
+        // console.log(mainString.includes(subString));//true
+        // console.log(mainString.includes("ol"));//false
+
+        // //using indexOf()- ES5 method
+        // var mainString1 = "Hello";
+        // var subString1 = "Hell";
+        // console.log(mainString1.indexOf(subString1)!== -1);//true
+        
+        //using regex.test()
+        // var mainString2 = "Hello";
+        // var regex = "/Hell/" ;
+        // regex.text(mainString2);
+        // console.log(regex);
+
+        ///=====================================================================================
+        //how to convert first letter of string to uppercase
+        // var string = "ashwini";
+        // console.log(string.charAt(0).toUpperCase()+string.slice(1)); 
+
+        // var str = prompt("Enter string");
+        // function fstLtrUppercase(str) {
+        //     return str.charAt(0).toUpperCase()+str.slice(1);
+        // }
+        // console.log(fstLtrUppercase(str));
+
+        //==============================================================================
+        //how to check if string starts with another string
+        //using startsWith() ES6 method
+        // var string = "Good Moring";
+        // var str =(string.startsWith("Good"));
+        // var str1 =(string.startsWith("Moring"));
+        // console.log(str);//true
+        // console.log(str1);//false
+
+        //============================================================================
+        //how to remove the spaces in string
+        //using trim() method
+        // var string1 = "    Helloo   "
+        // console.log(string1);
+        // var string2 = string1.trim();
+        // console.log(string2);
+
+        //=========================================================================
+        //what are string methods available in regular exp
+        //search() and replace()
+        //search() returns index value
+        // var msg = "Hello John";
+        // var n = msg.search(/john/i);
+        // console.log(n);// 6
+
+        //replace
+        // var msg1 = "Hello John";
+        // var m = msg1.replace(/john/i, "Peter");
+        // console.log(msg1);
+        // console.log(m);// Hello Peter
+
+        //==========================================================================
+        //how to search string for pattern 
+        //using test()
+        // var pattern = /you/;
+        // var pattern1 = /are/i;
+        // var res = pattern.test("How are you?");//true
+        // var res1 = pattern.test("How are You?");//false
+
+        // var res2 = pattern1.test("How are you?");
+        // var res3 = pattern1.test("How Are You?");
+
+        //================================================================
+        //what is the result of 1+2+'3'?
+        // var num = 1 + 2 + '3';
+        // console.log(num);//33
+
+        //=====================================================================
+        //how to convert string to title case /capitalized
+        //using RegExp
+        // function toTitleCase(str) {
+        //     return str.replace(
+        //         /\w\S*/g,
+        //         function(txt) {
+        //             return txt.charAt(0).toUpperCase()+txt.substr(1).toLowerCase();
+        //         }
+        //     );
+        // }
+        // console.log(toTitleCase("good morning john"));
+
+        // console.log(res);//true
+        // console.log(res1);//false
+
+        // const str = prompt("enter string");
+        // const arr = str.split(" ");
+        // for(var i = 0; i < arr.length; i++) {
+        //     arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+        // }
+        // const str1 = arr.join(" ");
+        // console.log(str1);
+
+        const str = prompt("enter string");
+        const arr = str.split(" ");
+        const arr1 = arr.map((ele) => {
+            return ele.charAt(0).toUpperCase() + ele.slice(1);
+        })
+
+        console.log(arr1.join(" "));
+        
+       
+        
+
+        
+
+        
+
+
+        
+
+    </script>
+</body>
+</html>

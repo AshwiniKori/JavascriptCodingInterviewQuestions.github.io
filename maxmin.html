@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //finding largest n=and smallest value in an array
+        const array = [1, 3, 6, 89, 43, 421, 890];
+        const maxValue = (arr) => {
+            return arr.reduce(function (pre, cur) {
+                return pre > cur ? pre : cur
+            })
+        }
+        document.write(`The max value = ${maxValue(array)} "<br>"`);
+
+        const minValue = (arr) => {
+            return arr.reduce(function (pre, cur) {
+                return pre < cur ? pre : cur
+            })
+        }
+        document.write(`The min value = ${minValue(array)} <br>`);
+
+        let arrValue = [56, 3, 12, 78, 98, 568];
+        let min = arrValue[0];
+        let max = arrValue[0];
+        for (let i = 1; i < arrValue.length; i++) {
+            if (arrValue[i] > max)
+                max = arrValue[i];
+
+            if (arrValue[i] < min)
+                min = arrValue[i];
+
+        }
+        document.write(`max number is ${max} <br> min number is ${min} <br>`);
+
+        let arrayNum = [12, 45, 89, 32, 79, 234, 567, 8];
+        let maxNum = Math.max(...arrayNum);
+        let minNum = Math.min(...arrayNum);
+        document.write(maxNum +"<br>");
+        document.write(minNum +"<br>");
+
+        const intArray = [23, 45, 76, 12, 4];
+        const largestValue = (arr) => {
+            firstlargestValue = Math.max(...arr);
+            return(firstlargestValue);
+        }
+        document.write(largestValue(intArray) +"<br>");
+
+        const intArray1 = [90, 45, 98, 34, 26, 3]
+        const smallestValue = (arr) => {
+            firstsmallestValue = Math.min(...arr)
+            return(firstsmallestValue);
+        }
+        document.write(smallestValue(intArray1) +"<br>");
+
+        //finding second largest number in an array and removing first largest number
+        const numArray = [45, 23, 78, 65, 90, 26, 109];
+        const largestValue1 = (arr) => {
+            firstLargestValue = Math.max(...arr);
+            index = arr.indexOf(firstlargestValue);
+            arr.splice(index, 1);
+            secondLargestValue = Math.max(...arr)
+            return(secondLargestValue);
+        }
+        console.log(largestValue1(numArray));
+
+        //finding second smallest number in an array
+        const numbers = [90, 34, 24, 6, 12, 56, 2];
+        const smallestValue1 = (arr1) => {
+            firstSmallestValue = Math.min(...arr1)
+            index = arr1.indexOf(firstSmallestValue)
+            arr1.splice(index, 1)
+            secondSmallestValue = Math.min(...arr1)
+            return(secondSmallestValue)
+        }
+        console.log(smallestValue1(numbers));
+
+        
+
+    </script>
+</body>
+
+</html>

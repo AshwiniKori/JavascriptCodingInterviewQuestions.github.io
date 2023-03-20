@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const inputNum = prompt("Please enter Number");
+        var fact = 1;
+        if(inputNum <=0) {
+            console.log('please enter valid number');
+        }
+        else{
+            for(let i=1; i<=inputNum; i++) {
+                fact = fact * i;
+            }
+            console.log(`factorial of ${inputNum} is ${fact}`);
+        }
+    </script>
+</body>
+</html>

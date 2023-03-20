@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>String Reverse</h1>
+    Enter String:<input type="text" id="string2"><br><br>
+    <button onclick="reversedString2()">Click Me</button>
+    <p id="p1"></p>
+    <script>
+        //string reverse
+        var string = "front end developer";
+        var reversedString = string.split("").reverse().join("");
+        console.log(string);
+        console.log(reversedString);
+
+        // // var string1 = prompt("enter string");
+        // var reversedString1 = string1.split("").reverse().join("");
+        // document.write(string1 + "<br>");
+        // document.write(reversedString1);
+
+        // function reversedString2() {
+        //    var str= document.getElementById("string2").value;
+        //    str.split("").reverse().join("");
+
+        // }
+        // document.getElementById("p1").innerHTML=reversedString2("str");
+
+        // ===========================================================================================
+
+
+        //finding sunm of numbers in an array
+        //reduce function
+        var array = [1, 20, 30, 12, 35];
+        var sum = array.reduce((a, i) => {
+            return a + i;
+        })
+        document.write(sum);
+
+        //using for loop
+        // function sumArray(array) {
+        //     const ourArray = [1, 4, 0, 9, -3];
+        //     let sum = 0;
+
+        //     for (let i = 0; i < ourArray.length; i += 1) {
+        //         sum += ourArray[i];
+        //     }
+
+        //     return sum;
+        // }
+
+        // console.log(sumArray([1, 4, 0, 9, -3]));
+
+        // //using forEach
+        // function sumArray(array) {
+        //     let sum = 0;
+
+        //     array.forEach(item => {
+        //         sum += item;
+        //     });
+
+        //     console.log(sum);
+        //     return sum;
+        // }
+
+        // sumArray([1, 4, 0, 9, -2]);
+
+        //using for..of
+        function sumArray(array) {
+            let sum = 0;
+
+            /*loop over array and add each item to sum
+             */
+            for (const item of array) {
+                sum += item;
+            }
+
+            // return the result
+            console.log(sum);
+            return sum;
+        }
+
+        sumArray([1, 4, 0, 9, -3]); //logs 11
+
+        //using for in loop
+        var arr = [1, 2, 5, 10, 20];
+        var sum = 0;
+        for (let i in arr) {
+            sum += arr[i];
+        }
+        document.write(sum);
+        //=====================================================================================
+        //what is the output of following code
+        const a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        for (let i = 0; i < 10; i++) {
+            setTimeout(() => console.log(a[i]), 1000);
+        }
+
+        for (var i = 0; i < 10; i++) {
+            setTimeout(() => console.log(a[i]), 1000);
+        }
+        //=====================================================================================
+        //what is the output
+        const number = undefined + 11;
+        if (number === NaN) {
+            document.write("NaN");
+        } else if (number === 11) {
+            document.write("11");
+        } else {
+            document.write("other");
+        }
+        //================================================================================
+        //startsWith and endsWith(both are case sensitive)
+        let name = "Full Stack Tutorials, Latest Interview Questions and Answers!";
+
+        //startsWith
+        console.log(name.startsWith("Full")); // true
+        console.log(name.startsWith("full")); // false
+        console.log(name.startsWith("Tutorials")); // false
+        console.log(name.startsWith("Tutorials", 11)); // true
+
+        //endsWith
+        console.log(name.endsWith("Answers!")); // true
+        console.log(name.endsWith("answers!")); // false
+        //===============================================================================
+
+        //what is the output
+        var b = 3;
+        var c = b++;
+        var d = ++b;
+        console.log(b, c, d);
+
+        //==============================================================================
+        //what is the output
+        function func1() {
+            return {
+                name: "Full Stack Tutorials",
+            };
+        }
+        console.log(func1());
+
+        function func2() {
+            return;
+            {
+                name: "Full Stack Tutorials";
+            }
+        }
+        console.log(func2());
+
+        console.log(typeof undefined);//undefined
+        console.log(typeof null);//object
+        console.log(typeof NULL);//unefined
+        console.log(typeof typeof 1);//string
+
+        //========================================================
+        //how toconvert an object into an array
+        let obj = { id: "1", name: "Test User", age: "25", profession: "Developer" };
+
+        //Method 1: Convert the keys to Array using - Object.keys()
+        console.log(Object.keys(obj));
+        // ["id", "name", "age", "profession"]
+
+        // Method 2 Converts the Values to Array using - Object.values()
+        console.log(Object.values(obj));
+        // ["1", "Test User", "25", "Developer"]
+
+        // Method 3 Converts both keys and values using - Object.entries()
+        console.log(Object.entries(obj));
+        //[["id", "1"],["name", "Test User"],["age", "25"],["profession", "Developer"]]
+
+        //==============================================================================
+        //How to convert an Array [] to Object {} in JavaScript
+        let arrr = ["1", "Test User", "25", "Developer"];
+        let arr1 = [
+            ["id", "1"],
+            ["name", "Test User"],
+            ["age", "25"],
+            ["profession", "Developer"],
+        ];
+
+        //Method 1: Using Object.assign() method
+        console.log(Object.assign({}, arrr));
+        //{0: "1", 1: "Test User", 2: "25", 3: "Developer"}
+
+        // Method 2 Using Spread operator
+        console.log({ ...arrr });
+        //{0: "1", 1: "Test User", 2: "25", 3: "Developer"}
+
+        // Method 3: Using Object.fromEntries() method
+        console.log(Object.fromEntries(arr1));
+        //{id: "1", name: "Test User", age: "25", profession: "Developer"}
+
+        //================================================================================
+        //output of following
+        const a1 = { x: 1, y: 2 };
+        const b1 = a1;
+        b1.x = 3;
+        console.log(a1);
+        console.log(b1);
+
+        // let a2 = 10;
+        // var a2 = 20;
+        // console.log(a2);//error
+
+        //==================================================================
+        //Write some code to check if an object is an array or not.
+        const arrayList = [1, 2, 3];
+        // check if arrayList is an Array or not
+        const isArr = Array.isArray(arrayList);
+        console.log(`Input arrayList is Array: ${isArr}`)
+
+        //how to empty an array
+        var arrayList1 = ['a', 'b', 'c', 'd', 'e', 'f']; // Created array
+        // var anotherArrayList = arrayList1;  // Referenced arrayList by another variable
+        // arrayList1.length = 0; // Empty the array by setting length to 0, this will empty all reference
+        // console.log(anotherArrayList); // Output []
+        //or
+        arrayList1.splice(0, arrayList1.length);
+        console.log(arrayList1);
+
+        //=========================================================================
+        //sorting an array
+        var numArray = [98, 34, -67, -3, 56, 12, 4, -1];
+        //ascending order(small to big)
+        numArray.sort((a, b) => a - b);
+        console.log(numArray);
+
+        var numArray1 = [98, 34, -67, -3, 56, 12, 4, -1];
+        //descending order(big to small)
+        numArray1.sort((a, b) => b - a);
+        console.log(numArray1);
+
+        //======================================================================
+        //Find the Maximum nd minimum using a Conditional (ternary) Operator
+        num1 = 10;
+        num2 = 20;
+
+        const max = (num1 > num2) ? num1 : num2;
+        const min = (num1 < num2) ? num1 : num2;
+
+        console.log(max);
+        console.log(min);
+
+        //========================================================================
+        //Creating a New Array using the Existing Array/List
+        var fruits = ["apple", "mango", "watermelon", "orange"];
+
+        var fruits_len = fruits.map((ele) => ele.length);
+
+        console.log(fruits_len);
+
+        //Creating a New Array after Filtering the Existing Array
+        var fruit = ["apple", "mango", "watermelon", "orange"];
+
+        var even_fruit = fruit.filter(ele => ele.length % 2 == 0);
+
+        console.log(even_fruit);
+
+        //Find an Element based on Specific Conditions
+        var fruits1 = ["apple", "mango", "watermelon", "orange"];
+
+        var data = fruits1.find(element => element.length >5 && element.length % 2 == 0);
+
+        console.log(data);
+
+        // Find the Index of an Element based on Specific Conditions
+        var fruits1 = ["apple", "mango", "watermelon", "orange"];
+
+        var data = fruits1.findIndex(element => element.length > 6 && element.length % 2 == 0);
+
+        console.log(data);
+
+        //=================================================================================
+        (function () {
+            var a3 = b3 = 5;
+        })();
+        console.log(b3);
+
+        var output = (function (x) {
+            delete x;
+            return x;
+        })(0);
+        console.log(output);
+
+        var Employee = {
+            company: 'abc'
+        }
+        var emp1 = Object.create(Employee);
+        delete emp1.company
+        console.log(emp1.company);
+
+        //========================================================================
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

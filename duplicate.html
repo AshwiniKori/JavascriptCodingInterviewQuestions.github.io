@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //finding duplicate elements in an array
+        //using filter() and indexOf() method
+        var array =  [1, 4, 8, 2, 4, 1, 6, 2, 9, 7];
+        document.write(array + "<br>")
+        function findDuplicates(arr) {
+            return arr.filter((ele, index) => 
+                arr.indexOf(ele) !== index);
+            }
+        document.write(findDuplicates(array) + "<br>");
+
+        //using set() and has() method
+        const array1 = [3, 8, 7, 5, 3, 9, 8];
+        const uniqueSet = new Set(array1);
+        const filteredElement = array.filter(value => {
+            if(uniqueSet.has(value)) {
+                uniqueSet.delete(value);
+            }
+            else {
+                return value;
+            }
+        });
+        document.write(filteredElement +"<br>");
+    </script>
+</body>
+</html>

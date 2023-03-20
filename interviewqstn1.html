@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //how to check a number is integer or not
+        function isInt(num) {
+            // check if remainder left when we divide by 1
+            return num % 1 === 0;
+        }
+
+        // call isInt function
+        console.log(isInt(4)); // true
+        console.log(isInt(12.2)); // false
+        console.log(isInt(0.3)); // false
+        console.log(isInt("abc"));
+
+        //============================================================================
+        
+        //how to dublicate same array
+        function duplicate(arr) {
+            // to duplicate an array use concat an array
+            return arr.concat(arr);
+        }
+
+        // call a function to duplicate array
+        const output = duplicate([1, 2, 3, 4, 5]);
+        console.log(output) // Output: [1,2,3,4,5,1,2,3,4,5]
+
+        //===========================================================================
+
+        //Write a ‘mul’ function which should invoke as below syntax.
+        //console.log(mul(2)(3)(4)); // output : 24
+       //console.log(mul(4)(3)(4)); // output : 48
+
+       function mul(x) {
+        return function(y) {
+            return function(z) {
+                return x * y * z;
+            };
+        };
+       }
+       console.log(mul(2)(3)(4));
+       console.log(mul(4)(3)(4));
+
+       //================================================================================
+       //fizzbuzz program using for loop
+       //multiples of 3 then print fizz
+       //multiples of 5 then print buzz
+       //multiples of 3 and 5 then print fizzbuzz
+
+       for (let i=1; i <= 100; i++) {
+        if((i % 3 == 0) && (i % 5 == 0)) {
+            console.log("fizzbuzz");
+        }
+        else if(i % 3 == 0) {
+            console.log("fizz");
+        }
+        else if (i % 5 == 0) {
+            console.log("buzz");
+        }
+        else{
+            console.log(i);
+        }
+        
+       }
+
+       //=============================================================================
+
+       //finding missing number in array from 1 to 10
+       const numArray = [1, 2, 3, 5, 6, 8, 10];
+       const missArray = [];
+       const misssingNumber = (arr) => {
+        const maxValue = Math.max(...arr);
+        const minValue = Math.min(...arr);
+        for (let i=minValue; i<maxValue; i++)
+            if(arr.indexOf(i) < 0){
+                missArray.push(i);
+            }
+            return missArray;
+       } 
+       console.log(misssingNumber(numArray));
+
+       //===================================================================================
+
+       //find sum of all natural numbers from 0 to 10
+       var sum = 0
+       for (let i=1; i<=10; i++){
+        sum = sum + i;
+       }
+       console.log(sum);
+
+       //====================================================================================
+
+       //to check vowel or not
+    //    var string = prompt("enter string");
+    //    string = string.toLowerCase();
+    //    if(string == "a" || string == "e" || string == "i" || string == "o" || string == "u") {
+    //     console.log(`${string} is Vovel`);
+    //    }
+    //    else if((string.length >= 2) || ( 0 > string > 0)) {
+    //     console.log("please enter valid charecter");
+    //    }
+    //    else {
+    //     console.log(`${string} is Not Vovel`);
+    //    }
+
+       //====================================================================================
+       //count a number of vowels present in string
+    //    var string1 = prompt("enter string")
+    //    var vowels = ["a", "e", "i", "o", "u"]
+    //    const countVowels = (str) => {
+    //     var count = 0;
+    //     for(let letter of str.toLowerCase()){
+    //        if(vowels.includes(letter)) {
+    //         count ++;
+    //        }
+          
+    //     }
+    //     return count;
+    //    }
+    //    console.log(countVowels(string1));
+
+       //===================================================================================
+       //printing vowels present in srtring
+
+    //    var string2 = prompt("enter string");
+    //    string2 = string2.toLowerCase();
+    //    var vowels;
+    //    for(let i=0; i<=string2.length; i++) {
+    //     vowels = string2[i];
+    //     if(vowels=="a" || vowels=="e" ||vowels=="i" ||vowels=="o" ||vowels=="u"){
+            
+    //         console.log(vowels);
+    //     }
+    //    }
+
+       //==================================================================================
+       //remove vowels from string
+    //    var string3 = prompt("enter string")
+    //    var noVowels = string3.replace(/[aeiou]/gi,'');
+    //    console.log(noVowels);
+
+       //====================================================================================
+
+       //string reverse
+    //    var string4 = prompt("enter string");
+    //    const stringReverse = (str) => {
+
+    //     var stringVal = str.split("").reverse().join("")
+    //     return stringVal;
+    //    }
+    //    console.log(stringReverse(string4));
+
+    //=====================================================================================
+
+    //how to find palindrome
+    // var value = prompt("enter value/string");
+    // var value1 = value.split("").reverse().join("");
+    // if(value == value1) {
+    //     console.log(`${value} is palindrome`);
+    // }
+    // else {
+    //     console.log(`${value} is not palindrome`); 
+    // }
+
+    var value = prompt('Enter value');
+    const palindrome = (str) => {
+        var reverseVal = str.split("").reverse().join("");
+        if(reverseVal == value) {
+            return (`${value} is Palindrome`);
+        }
+        else {
+        return (`${value} is not palindrome`); 
+        }
+    }
+    console.log(palindrome(value));
+
+    //========================================================================================
+
+    //how to swap the values of 2 variables
+    //with using 3rd variable
+    var a = 10;
+    var b = 20;
+    var c = a;
+     a = b;
+     b = c;
+    console.log(a);
+    console.log(b);
+
+    //without third varible
+    var m = 20;
+    var n = 50;
+    console.log(m,n);
+    [m, n] = [n, m];//array destructuring
+    console.log(m,n);
+
+    //============================================================================
+
+    //how to merge two array and sort them
+    //using concatination
+    var arr1 = [12, 34, 67, 13, 10];
+    var arr2 = [2, 45, 9, 19, 5];
+    var finalArr = arr1.concat(arr2);
+    console.log(finalArr);
+    var sortedArr = finalArr.sort((a,b) =>{
+        return a-b;
+    })
+    console.log(sortedArr);
+
+    //using spraed operator
+    var arr3 = [2, 4, 6];
+    var arr4 = [1, 3, 5];
+    var result = [...arr4, ...arr3];
+    console.log(result);
+    var sortedArray = result.sort((a,b) =>{
+        return a - b;
+    })
+    console.log(sortedArray);
+
+       
+    </script>
+</body>
+
+</html>

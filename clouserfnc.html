@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // outer function
+        function greet() {
+
+            // variable defined outside the inner function
+            let name = 'John';
+
+            // inner function
+            function displayName() {
+
+                // accessing name variable
+                return 'Hi' + ' ' + name;
+
+            }
+
+            return displayName;
+        }
+
+        const g1 = greet();
+        console.log(g1); // returns the function definition
+        console.log(g1()); // returns the value
+
+        //==========================================================================
+
+        function calculate(x) {
+            function multiply(y) {
+                return x * y;
+            }
+            return multiply;
+        }
+
+        const multiply3 = calculate(3);
+        const multiply4 = calculate(4);
+
+        console.log(multiply3); // returns calculate function definition
+        console.log(multiply3()); // NaN
+
+        console.log(multiply3(6)); // 18
+        console.log(multiply4(2)); // 8
+    </script>
+
+</body>
+
+</html>
